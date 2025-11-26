@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Noa Travel Document</title>
+  <!-- Favicon / Logo di Title -->
+  <link rel="icon" type="image/png" href="assets/logo-noatravel.png">
+
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <!--
+    CATATAN TEKNIS:
+    - Stack: HTML5 + CSS3 + JavaScript (tanpa framework).
+    - Layout & tampilan diatur di css/styles.css.
+    - Data negara & kontak ada di js/main.js (lihat komentar di file tersebut).
+  -->
+
+  <!-- NAVBAR -->
+ <header class="nv-header">
+  <div class="nv-container nv-nav">
+    <!-- Kiri: Logo + nama brand -->
+    <div class="nv-nav-left">
+      <div class="nv-logo-wrap">
+        <img src="assets/logo-noatravel.png" alt="Logo NoaTravel" class="nv-logo-img" />
+      </div>
+      <div class="nv-brand-text">
+        <span class="nv-brand-main">Noa Travel Document</span>
+       
+      </div>
+    </div>
+
+    <!-- Tengah + kanan: menu + tombol CTA -->
+    <nav class="nv-nav-links">
+      <ul class="nv-nav-menu">
+        <li><a href="#beranda">Home</a></li>
+        <li><a href="#katalog-visa">Katalog Visa</a></li>
+        <li><a href="#cara-kerja">Cara Kerja</a></li>
+        <li><a href="#kenapa">Kenapa Noa Travel</a></li>
+        <li><a href="#testimoni">Testimoni</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li><a href="#hubungi">Hubungi Kami</a></li>
+      </ul>
+
+      <a href="#hubungi" class="nv-btn-primary nv-btn-small nv-nav-cta">
+        Hubungi Kami
+      </a>
+    </nav>
+
+    <!-- Tombol menu untuk mobile -->
+    <button class="nv-menu-toggle" id="menuToggle" aria-label="Tombol menu navigasi">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+
+  <!-- Menu mobile -->
+  <div class="nv-mobile-menu" id="mobileMenu">
+    <a href="#beranda">Home</a>
+    <a href="#katalog-visa">Katalog Visa</a>
+    <a href="#cara-kerja">Cara Kerja</a>
+    <a href="#kenapa">Kenapa Noa Travel</a>
+    <a href="#testimoni">Testimoni</a>
+    <a href="#faq">FAQ</a>
+    <a href="#hubungi">Hubungi Kami</a>
+    <a href="#hubungi" class="nv-btn-primary nv-btn-full">Hubungi Kami</a>
+  </div>
+</header>
+
+  <main>
+    <!-- HERO / BERANDA -->
+    <section id="beranda" class="nv-section nv-hero">
+      <div class="nv-container nv-hero-grid">
+        <div class="nv-hero-left">
+          <div class="nv-badge">
+            <span class="nv-badge-dot"></span>
+            <span>Layanan pengurusan visa turis, bisnis, dan keluarga</span>
+          </div>
+
+          <h1 class="nv-hero-title">
+            Urus Visa Lebih Mudah Bersama Noa Travel
+          </h1>
+          <p class="nv-hero-subtitle">
+            Layanan pengurusan visa turis &amp; bisnis untuk berbagai negara,
+            proses simpel, transparan, dan dibantu tim berpengalaman dari awal
+            hingga visa selesai.
+          </p>
+
+          <!-- FORM HERO -->
+          <form class="nv-hero-form" id="heroForm">
+            <div class="nv-form-group">
+              <label for="negaraTujuan">Pilih Negara Tujuan</label>
+              <select id="negaraTujuan" required>
+                <option value="" disabled selected>-- Pilih negara --</option>
+                <!-- Opsi negara diisi otomatis dari js/main.js -->
+              </select>
+            </div>
+            <div class="nv-form-group">
+              <label for="jenisVisa">Jenis Visa</label>
+              <select id="jenisVisa" required>
+                <option value="" disabled selected>-- Pilih jenis visa --</option>
+                <option value="turis">Visa Turis / Kunjungan</option>
+                <option value="bisnis">Visa Bisnis</option>
+                <option value="keluarga">Visa Kunjungan Keluarga</option>
+                <option value="pelajar">Visa Pelajar / Studi</option>
+                <option value="lainnya">Lainnya (diskusikan dengan tim)</option>
+              </select>
+            </div>
+
+            <button type="submit" class="nv-btn-primary nv-btn-full">
+              Cek Harga &amp; Konsultasi
+            </button>
+
+            <p class="nv-hero-note">
+              <span class="nv-hero-note-icon">i</span>
+              <span>
+                Pengisian formulir ini tidak langsung memesan layanan.
+                Tim NoaTravel akan menghubungi Anda untuk menjelaskan detail biaya dan alur proses.
+              </span>
+            </p>
+          </form>
+
+          <ul class="nv-hero-benefits">
+            <li><span>✓</span>Tanpa ribet, cukup kirim dokumen sesuai checklist.</li>
+            <li><span>✓</span>Update progress pengurusan via WhatsApp.</li>
+            <li><span>✓</span>Harga transparan, tanpa biaya tersembunyi.</li>
+          </ul>
+        </div>
+
+        <div class="nv-hero-right" aria-hidden="true">
+          <div class="nv-hero-panel">
+            <h2>Ringkasan Pengajuan</h2>
+            <div class="nv-hero-panel-body">
+              <div class="nv-hero-panel-row">
+                <span>1.</span>
+                <div>
+                  <p class="nv-hero-panel-title">Cek profil &amp; tujuan perjalanan</p>
+                  <p class="nv-hero-panel-text">Kami membantu memilih jenis visa yang paling sesuai.</p>
+                </div>
+              </div>
+              <div class="nv-hero-panel-row">
+                <span>2.</span>
+                <div>
+                  <p class="nv-hero-panel-title">Review dokumen &amp; formulir</p>
+                  <p class="nv-hero-panel-text">Dokumen diperiksa agar rapi dan lengkap sebelum ke kedutaan.</p>
+                </div>
+              </div>
+              <div class="nv-hero-panel-row">
+                <span>3.</span>
+                <div>
+                  <p class="nv-hero-panel-title">Pendampingan proses di kedutaan</p>
+                  <p class="nv-hero-panel-text">Termasuk jadwal biometrik/wawancara bila diperlukan.</p>
+                </div>
+              </div>
+            </div>
+            <div class="nv-hero-panel-footer">
+              <div class="nv-hero-status">
+                <span class="nv-status-dot"></span>
+                Slot konsultasi hari ini masih tersedia
+              </div>
+              <span class="nv-hero-footnote">Estimasi proses 7–30 hari kerja*</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- KATALOG VISA -->
+    <section id="katalog-visa" class="nv-section nv-section-alt">
+      <div class="nv-container">
+        <header class="nv-section-header">
+          <p class="nv-section-kicker">Katalog Visa Negara Populer</p>
+          <h2 class="nv-section-title">Pilihan Negara Tujuan NoaTravel</h2>
+          <p class="nv-section-sub">
+            Berikut beberapa negara yang paling sering diajukan oleh klien kami.
+            Informasi di bawah adalah gambaran umum, detail lengkap akan dijelaskan saat konsultasi.
+          </p>
+        </header>
+
+        <div class="nv-visa-grid" id="visaGrid">
+          <!-- Kartu negara di-render dari js/main.js -->
+        </div>
+
+        <p class="nv-visa-note">
+          * Harga dapat berubah sewaktu-waktu sesuai kebijakan dan biaya resmi kedutaan.
+          Silakan hubungi kami untuk informasi harga dan syarat terbaru.
+        </p>
+      </div>
+    </section>
+
+    <!-- KENAPA NOATRAVEL -->
+    <section id="kenapa" class="nv-section">
+      <div class="nv-container">
+        <header class="nv-section-header">
+          <p class="nv-section-kicker">Kenapa Noa Travel</p>
+          <h2 class="nv-section-title">Alasan Banyak Klien Memilih Noa Travel</h2>
+          <p class="nv-section-sub">
+            Kami berusaha membuat pengalaman pengurusan visa menjadi lebih tenang dan terarah,
+            baik untuk perjalanan pertama ke luar negeri maupun untuk pelaku bisnis yang sering bepergian.
+          </p>
+        </header>
+
+        <div class="nv-why-grid">
+          <article class="nv-why-card">
+            <div class="nv-why-icon">📋</div>
+            <h3>Proses simpel dan terarah</h3>
+            <p>
+              Setiap pemohon akan mendapatkan penjelasan langkah demi langkah,
+              sehingga Anda tahu apa yang perlu disiapkan di setiap tahap.
+            </p>
+          </article>
+
+          <article class="nv-why-card">
+            <div class="nv-why-icon">💬</div>
+            <h3>Konsultasi gratis via WhatsApp</h3>
+            <p>
+              Sebelum memakai layanan, Anda bebas bertanya dulu mengenai jenis visa,
+              estimasi biaya, hingga risiko yang perlu diperhatikan.
+            </p>
+          </article>
+
+          <article class="nv-why-card">
+            <div class="nv-why-icon">💰</div>
+            <h3>Harga transparan &amp; jelas</h3>
+            <p>
+              Rincian biaya dijelaskan sejak awal, termasuk biaya kedutaan dan jasa
+              pengurusan, tanpa tambahan tiba-tiba di tengah proses.
+            </p>
+          </article>
+
+          <article class="nv-why-card">
+            <div class="nv-why-icon">🧾</div>
+            <h3>Dokumen dicek tim berpengalaman</h3>
+            <p>
+              Tim kami terbiasa menangani beragam profil pemohon sehingga dapat
+              memberikan masukan bila dokumen masih kurang kuat.
+            </p>
+          </article>
+
+          <article class="nv-why-card">
+            <div class="nv-why-icon">📲</div>
+            <h3>Update status berkala</h3>
+            <p>
+              Perkembangan proses, mulai dari penyerahan berkas hingga visa selesai,
+              akan kami sampaikan melalui WhatsApp.
+            </p>
+          </article>
+
+          <article class="nv-why-card">
+            <div class="nv-why-icon">🔒</div>
+            <h3>Privasi &amp; keamanan terjaga</h3>
+            <p>
+              Data dan dokumen Anda disimpan dengan aman dan hanya digunakan
+              untuk kepentingan pengajuan visa sesuai aturan yang berlaku.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- CARA KERJA -->
+    <section id="cara-kerja" class="nv-section nv-section-alt">
+      <div class="nv-container">
+        <header class="nv-section-header">
+          <p class="nv-section-kicker">Alur Layanan</p>
+          <h2 class="nv-section-title">Cara Kerja Pengurusan Visa di Noa Travel</h2>
+          <p class="nv-section-sub">
+            Hanya empat langkah sederhana. Sepanjang proses, Anda dapat bertanya
+            kapan saja melalui WhatsApp bila ada hal yang belum jelas.
+          </p>
+        </header>
+
+        <div class="nv-steps">
+          <div class="nv-step-item">
+            <div class="nv-step-number">1</div>
+            <h3>Konsultasi awal</h3>
+            <p>
+              Hubungi tim Noa Travel via WhatsApp, sampaikan rencana perjalanan
+              (tujuan, lama tinggal, waktu keberangkatan). Kami akan membantu
+              mengarahkan jenis visa yang sesuai.
+            </p>
+          </div>
+
+          <div class="nv-step-item">
+            <div class="nv-step-number">2</div>
+            <h3>Kirim dokumen</h3>
+            <p>
+              Kami kirimkan checklist dokumen. Anda dapat mengirim softcopy
+              untuk direview terlebih dahulu sebelum menyerahkan dokumen asli.
+            </p>
+          </div>
+
+          <div class="nv-step-item">
+            <div class="nv-step-number">3</div>
+            <h3>Proses pengajuan visa</h3>
+            <p>
+              Tim NoaTravel membantu pengisian formulir, penjadwalan biometrik
+              atau wawancara, dan mengurus pengajuan ke kedutaan.
+            </p>
+          </div>
+
+          <div class="nv-step-item">
+            <div class="nv-step-number">4</div>
+            <h3>Visa selesai</h3>
+            <p>
+              Setelah visa disetujui, paspor dapat diambil di kantor kami
+              atau dikirim menggunakan jasa kurir terpercaya sesuai kesepakatan.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TESTIMONI -->
+    <section id="testimoni" class="nv-section">
+      <div class="nv-container">
+        <header class="nv-section-header">
+          <p class="nv-section-kicker">Testimoni Klien</p>
+          <h2 class="nv-section-title">Cerita dari Pengguna Layanan Noa Travel</h2>
+          <p class="nv-section-sub">
+            Berikut beberapa pengalaman klien yang telah mempercayakan pengurusan visanya kepada kami.
+          </p>
+        </header>
+
+        <div class="nv-testi-grid">
+          <article class="nv-testi-card">
+            <p class="nv-testi-text">
+              “Sangat terbantu urus visa Jepang! Penjelasan tim Noa Travel jelas,
+              dan saya selalu diberi kabar setiap ada perkembangan.”
+            </p>
+            <div class="nv-testi-footer">
+              <div>
+                <div class="nv-testi-name">Nadia</div>
+                <div class="nv-testi-city">Jakarta</div>
+              </div>
+              <span class="nv-testi-badge">Visa Jepang</span>
+            </div>
+          </article>
+
+          <article class="nv-testi-card">
+            <p class="nv-testi-text">
+              “Respon cepat dan sangat informatif. Ketika saya bingung soal jadwal
+              wawancara USA, tim NoaTravel menjelaskan dengan detail.”
+            </p>
+            <div class="nv-testi-footer">
+              <div>
+                <div class="nv-testi-name">Rama</div>
+                <div class="nv-testi-city">Bekasi</div>
+              </div>
+              <span class="nv-testi-badge">Visa Amerika Serikat</span>
+            </div>
+          </article>
+
+          <article class="nv-testi-card">
+            <p class="nv-testi-text">
+              “Pertama kali mengurus visa Schengen dan cukup deg-degan,
+              tapi dengan bantuan NoaTravel prosesnya jadi jauh lebih terarah.”
+            </p>
+            <div class="nv-testi-footer">
+              <div>
+                <div class="nv-testi-name">Dewi</div>
+                <div class="nv-testi-city">Tangerang</div>
+              </div>
+              <span class="nv-testi-badge">Visa Schengen Eropa</span>
+            </div>
+          </article>
+
+          <article class="nv-testi-card">
+            <p class="nv-testi-text">
+              “Saya pakai NoaTravel untuk visa bisnis ke Korea. Dokumen perusahaan
+              dibantu dirapikan dan dijelaskan apa saja yang perlu diperkuat.”
+            </p>
+            <div class="nv-testi-footer">
+              <div>
+                <div class="nv-testi-name">Fikri</div>
+                <div class="nv-testi-city">Surabaya</div>
+              </div>
+              <span class="nv-testi-badge">Visa Bisnis Korea</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" class="nv-section nv-section-alt">
+      <div class="nv-container">
+        <header class="nv-section-header">
+          <p class="nv-section-kicker">Pertanyaan Umum</p>
+          <h2 class="nv-section-title">FAQ Layanan Noa Travel</h2>
+          <p class="nv-section-sub">
+            Jika pertanyaan Anda belum tercantum di bawah, silakan hubungi kami melalui WhatsApp
+            untuk penjelasan lebih lanjut.
+          </p>
+        </header>
+
+        <div class="nv-faq-list">
+          <div class="nv-faq-item">
+            <button class="nv-faq-question">
+              <span>Berapa lama proses pengurusan visa?</span>
+              <span class="nv-faq-icon">+</span>
+            </button>
+            <div class="nv-faq-answer">
+              Lama proses bervariasi tergantung negara dan jenis visa. Umumnya berkisar 7–30 hari
+              kerja sejak berkas lengkap dan diterima kedutaan. Estimasi lebih rinci akan kami
+              sampaikan saat konsultasi.
+            </div>
+          </div>
+
+          <div class="nv-faq-item">
+            <button class="nv-faq-question">
+              <span>Apakah Noa Travel menjamin visa disetujui?</span>
+              <span class="nv-faq-icon">+</span>
+            </button>
+            <div class="nv-faq-answer">
+              Tidak. Keputusan visa sepenuhnya merupakan kewenangan kedutaan. Noa Travel membantu
+              menyiapkan dokumen dan mengurus proses administrasi agar pengajuan berjalan rapi
+              dan sesuai aturan.
+            </div>
+          </div>
+
+          <div class="nv-faq-item">
+            <button class="nv-faq-question">
+              <span>Bisakah konsultasi sebelum bayar?</span>
+              <span class="nv-faq-icon">+</span>
+            </button>
+            <div class="nv-faq-answer">
+              Ya, konsultasi awal via WhatsApp tidak dikenakan biaya. Anda bisa bertanya dulu
+              mengenai profil kasus, peluang, dan estimasi biaya sebelum memutuskan memakai layanan.
+            </div>
+          </div>
+
+          <div class="nv-faq-item">
+            <button class="nv-faq-question">
+              <span>Dokumen apa saja yang dibutuhkan?</span>
+              <span class="nv-faq-icon">+</span>
+            </button>
+            <div class="nv-faq-answer">
+              Umumnya diperlukan paspor, KTP, pas foto, bukti keuangan, tiket dan reservasi hotel
+              atau surat undangan, serta dokumen pendukung lainnya. Checklist detail akan
+              kami kirimkan setelah mengetahui tujuan negara dan jenis visa yang diajukan.
+            </div>
+          </div>
+
+          <div class="nv-faq-item">
+            <button class="nv-faq-question">
+              <span>Bagaimana cara pembayaran?</span>
+              <span class="nv-faq-icon">+</span>
+            </button>
+            <div class="nv-faq-answer">
+              Pembayaran jasa Noa Travel dilakukan melalui transfer bank. Biasanya dibagi dua tahap:
+              uang muka saat konfirmasi layanan, dan pelunasan sebelum berkas masuk ke kedutaan
+              atau sesuai kesepakatan.
+            </div>
+          </div>
+
+          <div class="nv-faq-item">
+            <button class="nv-faq-question">
+              <span>Apakah data saya aman?</span>
+              <span class="nv-faq-icon">+</span>
+            </button>
+            <div class="nv-faq-answer">
+              Kami menjaga kerahasiaan data pribadi dan dokumen Anda. Berkas hanya digunakan
+              untuk keperluan pengajuan visa dan tidak dibagikan ke pihak lain di luar proses resmi.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- HUBUNGI KAMI -->
+   <section id="hubungi" class="nv-section nv-contact">
+  <div class="nv-container nv-contact-grid">
+    <!-- Kolom kiri: Hubungi Tim -->
+    <div class="nv-contact-main">
+      <h2 class="nv-contact-title">Hubungi Tim Noa Travel</h2>
+      <p class="nv-contact-text">
+        Butuh bantuan memilih jenis visa atau ingin memastikan kelengkapan dokumen?
+        Tim kami siap membantu melalui WhatsApp dan email pada jam kerja.
+      </p>
+
+      <div class="nv-contact-card">
+        <div class="nv-contact-card-header">
+          <h3>Kontak WhatsApp</h3>
+          <p>Silakan pilih salah satu kontak di bawah ini:</p>
+        </div>
+
+        <div class="nv-contact-person-grid">
+          <!-- Kontak Reza -->
+          <div class="nv-contact-person">
+            <div class="nv-contact-person-header">
+              <span class="nv-contact-person-name">Reza Septian</span>
+              <span class="nv-contact-person-role">Konsultan Visa</span>
+            </div>
+            <div class="nv-contact-person-body">
+              <div class="nv-contact-label">Nomor WhatsApp</div>
+              <div class="nv-contact-value">+62 821-1118-7730</div>
+              <a href="https://wa.me/6282111187730" target="_blank" rel="noopener" class="nv-btn-wa">
+                <span class="nv-wa-icon">WA</span>
+                <span>Chat WhatsApp Reza</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Kontak Fidella -->
+          <div class="nv-contact-person">
+            <div class="nv-contact-person-header">
+              <span class="nv-contact-person-name">Fidella Eka Pertiwi</span>
+              <span class="nv-contact-person-role">Customer Support</span>
+            </div>
+            <div class="nv-contact-person-body">
+              <div class="nv-contact-label">Nomor WhatsApp</div>
+              <div class="nv-contact-value">+62 877-1506-6432</div>
+              <a href="https://wa.me/6287715066432" target="_blank" rel="noopener" class="nv-btn-wa">
+                <span class="nv-wa-icon">WA</span>
+                <span>Chat WhatsApp Fidella</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <p class="nv-contact-note">
+          Butuh bantuan pilih jenis visa? Kirimkan rencana perjalanan Anda (tujuan, lama tinggal,
+          dan estimasi tanggal keberangkatan), nanti tim kami bantu arahkan jenis visa yang tepat.
+        </p>
+      </div>
+    </div>
+
+    <!-- Kolom kanan: Informasi kantor -->
+    <div class="nv-contact-side">
+      <div class="nv-contact-info">
+        <h3>Informasi Kantor Noa Travel</h3>
+
+        <div class="nv-contact-info-row">
+          <p class="nv-contact-label">Email</p>
+          <a href="https://mail.google.com/mail/?view=cm&fs=1&to=rezaseptiann7@gmail.com" target="_blank">rezaseptiann7@gmail.com</a>
+
+        </div>
+
+<div class="nv-contact-info-row">
+  <p class="nv-contact-label">Alamat Kantor</p>
+  <p class="nv-contact-value">
+    <a 
+      href="https://maps.app.goo.gl/W1YQxvsUtkoH1vcb7"
+      target="_blank"
+      class="nv-maps-link">
+      Jl. Prof. DR. Satrio No.18, Kuningan, Karet Kuningan, 
+      Kecamatan Setiabudi, Kuningan, Daerah Khusus Ibukota Jakarta 12940
+    </a>
+  </p>
+</div>
+
+        <div class="nv-contact-info-row">
+          <p class="nv-contact-label">Catatan Kunjungan</p>
+          <p class="nv-contact-value">
+            Kunjungan ke kantor dilakukan dengan janji temu terlebih dahulu agar tim kami
+            dapat menyiapkan sesi konsultasi dan pemeriksaan dokumen dengan maksimal.
+          </p>
+          <div class="nv-contact-info-row">
+          <p class="nv-contact-label">Disclaimer</p>
+          <p class="nv-contact-value">
+          Noa Travel tidak berafiliasi dengan kedutaan manapun. Keputusan visa sepenuhnya 
+          merupakan wewenang kedutaan atau pusat aplikasi visa resmi terkait.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+    <!-- END HUBUNGI KAMI -->
+
+    <!-- ANCHOR UNTUK LEGAL (NANTI BISA DIISI HALAMAN TERPISAH) -->
+    <section id="kebijakan-privasi"></section>
+    <section id="syarat-ketentuan"></section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="nv-footer">
+    <div class="nv-container nv-footer-inner">
+      <div>
+      <div class="nv-footer-copy" id="footerYear">
+        <!-- Tahun diisi lewat JS -->
+      </div>
+      <p class="nv-footer-disclaimer">
+
+      </p>
+    </div>
+  </footer>
+
+  <!-- JavaScript -->
+  <script src="js/main.js"></script>
+</body>
+</html>
